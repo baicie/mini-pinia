@@ -1,0 +1,27 @@
+{
+  "name": "@baicie/pinia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "pnpm run build --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue": "^3.4.15"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.15"
+  },
+  "dependencies": {
+    "vue-demi": "^0.14.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
