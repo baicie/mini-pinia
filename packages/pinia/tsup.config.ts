@@ -10,4 +10,7 @@ export default defineConfig({
   splitting: true,
   target: 'es2019',
   external: [...Object.keys(pkg.dependencies || {})],
+  define: {
+    __DEV__: 'true',
+  },
 })

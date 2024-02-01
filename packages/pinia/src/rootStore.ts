@@ -1,4 +1,5 @@
-import type { App, EffectScope, InjectionKey } from 'vue-demi'
+import type { App, EffectScope, InjectionKey, Ref } from 'vue-demi'
+import type { StateTree } from './types'
 
 // eslint-disable-next-line import/no-mutable-exports
 export let activePinia: Pinia | undefined
@@ -12,9 +13,9 @@ export interface Pinia {
   app: App | null
   scope: EffectScope
   store: Map<string, any>
-  state: any
+  state: Ref<Record<string, StateTree>>
 }
 
 export const piniaSymbol = Symbol('pinia') as InjectionKey<Pinia>
 
-export interface PiniaPlugin { }
+export type PiniaPlugin = (context: any) => void
