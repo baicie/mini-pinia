@@ -2,8 +2,8 @@
 import HelloWorld from './components/HelloWorld.vue'
 import { useDemoStore } from './store'
 
-const store = useDemoStore()
-console.log('store', store)
+const { state2 } = useDemoStore()
+console.log('store', state2)
 </script>
 
 <template>

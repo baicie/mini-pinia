@@ -15,3 +15,18 @@ export const useDemoStore = defineStore('demo', () => {
     add,
   }
 })
+
+export const useDemoStore2 = defineStore('demo2', () => {
+  const state = reactive({
+    a: 1,
+  })
+
+  const add = () => {
+    state.a++
+  }
+
+  return {
+    state,
+    add,
+  }
+})

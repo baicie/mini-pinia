@@ -1,5 +1,5 @@
 import type { App, EffectScope, InjectionKey, Ref } from 'vue-demi'
-import type { StateTree } from './types'
+import type { StateTree, StoreGeneric } from './types'
 
 // eslint-disable-next-line import/no-mutable-exports
 export let activePinia: Pinia | undefined
@@ -12,7 +12,7 @@ export interface Pinia {
   install: (app: App) => void
   app: App | null
   scope: EffectScope
-  store: Map<string, any>
+  store: Map<string, StoreGeneric>
   state: Ref<Record<string, StateTree>>
 }
 
