@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "pnpm run build --watch",
-    "prepublishOnly": "pnpm run build && bumpp version"
+    "prepublishOnly": "pnpm run build && pnpm bumpp version --all"
   },
   "keywords": [],
   "author": "",
