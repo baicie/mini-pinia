@@ -4,7 +4,10 @@ import { type Pinia, piniaSymbol, setActivePinia } from './rootStore'
 import type { StateTree } from './types'
 
 export function createPinia() {
+  // 创建一个effectScope
+  // 提供管理和隔离响应式数据的能力
   const scope = effectScope(true)
+  // 在创建的 effectScope 中运行一个函数，这个函数返回了一个对象
   const state = scope.run<Ref<Record<string, StateTree>>>(() =>
     ref<Record<string, StateTree>>({}),
   )!
@@ -13,10 +16,13 @@ export function createPinia() {
   const pinia: Pinia = markRaw({
     install(app) {
       setActivePinia(pinia)
+      // 关联vue应用实例
       pinia.app = app
+      // 提供一个全局的pinia实例
       app.provide(piniaSymbol, pinia)
     },
     use(plugin) {
+      // 添加插件
       plugins.push(plugin)
     },
     plugins,

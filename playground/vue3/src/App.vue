@@ -4,7 +4,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
 const store = useDemoStore()
 const store2 = useDemoStore2()
-console.log('store', store)
 </script>
 
 <template>

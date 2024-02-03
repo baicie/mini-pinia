@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useDemoStore } from '../store'
 
 defineProps<{ msg: string }>()
 const store = useDemoStore()
-const count = ref(0)
 </script>
 
 <template>
